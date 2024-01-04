@@ -1,5 +1,13 @@
 {
   "onlinetools": "especially",
   "walk": "planet",
-  "surprise": "want"
+  "surprise": "want",
+  "exist": {
+    "board": {
+      "acres": {
+        "test": "hej",
+        "birth": "nej"
+      }
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import deepmerge from 'deepmerge';
 import { FileUtil } from '../utils/FileUtil.js';
 
 const merge = (inputFiles: string[], outputFile: string) => {
@@ -20,10 +21,7 @@ const merge = (inputFiles: string[], outputFile: string) => {
     return;
   }
 
-  let output = {};
-  fileData.forEach((data) => {
-    output = { ...output, ...data };
-  });
+  const output = deepmerge.all(fileData);
   const content = JSON.stringify(output, null, 2);
 
   FileUtil.writeFile(outputPath, outputFileName, content);
